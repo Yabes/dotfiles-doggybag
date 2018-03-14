@@ -1,0 +1,31 @@
+# Lines configured by zsh-newuser-install
+export HISTFILE=~/.histfile
+export HISTSIZE=100000
+export SAVEHIST=100000
+export HISTCONTROL=ignoredups:erasedups
+setopt appendhistory autocd beep notify
+setopt HIST_IGNORE_DUPS HIST_IGNORE_ALL_DUPS
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/developer/.zshrc'
+
+autoload -Uz compinit 
+# Update compinit if current dump is too old
+if test `find "~/.zcompdump" -mmin +120 >/dev/null 2>&1`; then
+  compinit
+else
+  compinit -C
+fi
+
+#End of lines added by compinstall
+
+### Personal stuff
+
+# Load personal configs
+ZSH_DIR=$(dirname $(realpath $0))
+. ~/${ZSH_DIR}/prompt.zsh
+. ~/${ZSH_DIR}/aliases.zsh
+. ~/${ZSH_DIR}/bind.zsh
+. ~/${ZSH_DIR}/fzf.zsh
+. ~/${ZSH_DIR}/../git/git-aliases.zsh

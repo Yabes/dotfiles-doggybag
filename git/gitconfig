@@ -1,0 +1,47 @@
+[core]
+    editor = vim
+    pager = less -r
+[color]
+    ui = true
+[alias]
+    co = checkout
+    lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    s = status -s
+    tags = tag -l
+    branches = branch -a
+    amend = commit --amend
+    br = branch
+    cl = clone
+    cp = cherry-pick
+    current-branch-name = ! git branch | grep '*' | sed 's/* //'
+    dc = diff --cached
+    df = diff --color
+    l = log --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'
+    ll = !git l --all
+    pl = pull
+    sa = stash apply
+    sl = stash list
+    ss = stash save
+    undo = git reset --soft HEAD^
+    home = rev-parse --show-toplevel
+    standup = git log --all --author=$USER --since='9am yesterday' --format=%s
+    unstage = reset HEAD
+    untrack = update-index --assume-unchanged
+[mergetool]
+    keepBackup = false
+[push]
+    default = matching
+[grep]
+    lineNumber = true
+[rerere]
+    enabled = true
+[help]
+    autocorrect = 1
+[commit]
+    template = ~/.git_commit_template.txt
+[commit]
+  verbose = true
+[rebase]
+  autostash = true
+[diff]
+  indentHeuristic = true
