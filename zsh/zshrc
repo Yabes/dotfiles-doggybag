@@ -10,7 +10,7 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/developer/.zshrc'
 
-autoload -Uz compinit 
+autoload -Uz compinit
 # Update compinit if current dump is too old
 if test `find "~/.zcompdump" -mmin +120 >/dev/null 2>&1`; then
   compinit
@@ -23,9 +23,9 @@ fi
 ### Personal stuff
 
 # Load personal configs
-ZSH_DIR=$(dirname $(realpath $0))
-. ~/${ZSH_DIR}/prompt.zsh
-. ~/${ZSH_DIR}/aliases.zsh
-. ~/${ZSH_DIR}/bind.zsh
-. ~/${ZSH_DIR}/fzf.zsh
-. ~/${ZSH_DIR}/../git/git-aliases.zsh
+ZSH_DIR=$(dirname $(readlink ~/.zshrc))
+. ${ZSH_DIR}/prompt.zsh
+. ${ZSH_DIR}/aliases.zsh
+. ${ZSH_DIR}/bind.zsh
+. ${ZSH_DIR}/fzf.zsh
+. ${ZSH_DIR}/../git/git-aliases.zsh
